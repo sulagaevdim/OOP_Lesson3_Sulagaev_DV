@@ -1,8 +1,5 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 
 import static javax.swing.UIManager.get;
 
@@ -23,10 +20,21 @@ public class Main {
                 new LinkedList<>(),"линька", "Татьяна Фомичева", "Nhandu_Chromatus");
 
         VetClinic vetClinic = new VetClinic();
-        vetClinic.addPatient(pushok, pirat, archi, nemo, mrCrabs);
+        vetClinic.addPatients(pushok, pirat, archi, nemo, mrCrabs);
         System.out.println(vetClinic.getPatients());
         System.out.println(vetClinic.getGoables());
+        System.out.println(vetClinic.getFlyable());
+        System.out.println(vetClinic.getSwimables());
 
+        Doctor viktor = new Doctor("Виктор", "Сулагаев",
+                LocalDate.of(1966, 9, 01), 35, "Хирург");
+        Nurse elena = new Nurse("Елена", "Сулагаева",
+                LocalDate.of(1970, 8, 06), 31, "Сестринское дело", viktor);
+
+        vetClinic.addTreatment(LocalDate.of(2024, 5, 1), pushok, viktor);
+        vetClinic.addTreatment(LocalDate.of(2024, 5, 2), pirat, viktor);
+        vetClinic.addTreatment(LocalDate.of(2024, 5, 3), nemo, viktor);
+        vetClinic.showTreatment();
 
     }
 }

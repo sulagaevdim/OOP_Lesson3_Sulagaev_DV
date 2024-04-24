@@ -3,7 +3,7 @@ import java.util.List;
 /**
  * Семейство кошачьих
  */
-public class Cat extends Animal implements Goable, Swimable{
+public class Cat extends Animal implements Goable, Swimable {
     private int legsCount;
     public Cat(String name, LocalDate birthday, List<LocalDate> vactinations,
                String illness, String owner, int legsCount) {
